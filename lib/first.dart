@@ -17,7 +17,9 @@ class _homepageState extends State<homepage>{
       body: Padding(
         padding: EdgeInsets.only(
             left: 10.0,
-            right: 10.0
+            right: 10.0,
+            top: 3.0,
+            bottom: 5.0
 
         ),
         child: Column(
@@ -34,10 +36,10 @@ class _homepageState extends State<homepage>{
               ),
             ),
             Text('''
-            \n1. For each question, 10 seconds will be allotted for answering\n\n2. Every question have four options\n\n3.Choose one option and press next button to move on to the next question\n\n4.At the end of the quiz, total score will be displayed\n\nClick on "Start Quiz" to begin
+            \n1. For each question, 10 seconds will be allotted for answering\n\n2. Every question have four options\n\n3.Choose one option and press next button to move on to the next question\n\n4.At the end of the quiz, total score will be displayed\n\n\t\t       Click on "Start Quiz" to begin
             ''',
             style: TextStyle(
-              fontSize: 25.0,
+              fontSize: 18.0,
               fontFamily: "",
               color: Colors.black,
             ),
@@ -45,11 +47,13 @@ class _homepageState extends State<homepage>{
             RaisedButton(
               onPressed: (){
               },
-              color: Colors.redAccent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              color: Color(0xFF0D47A1),
               child: Text(
                   "Start Quiz",
                   style: TextStyle(
-                    fontSize: 25.0,
+                    fontSize: 20.0,
                     color: Colors.white
                   ),
                   textAlign: TextAlign.center,
