@@ -31,7 +31,7 @@ class _splashscreenState extends State<splashscreen> {
           style: TextStyle(
             fontSize: 50.0,
             color: Colors.white,
-            fontFamily: "Rockwell",
+            fontFamily: "Pacifico",
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
