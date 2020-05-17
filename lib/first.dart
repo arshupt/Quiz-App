@@ -30,7 +30,7 @@ class _homepageState extends State<homepage>{
               style: TextStyle(
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold,
-                fontFamily: "",
+                fontFamily: "Montserrat",
 
                 color: Colors.black
               ),
@@ -40,7 +40,7 @@ class _homepageState extends State<homepage>{
             ''',
             style: TextStyle(
               fontSize: 18.0,
-              fontFamily: "",
+              fontFamily: "Montserrat",
               color: Colors.black,
             ),
             ),
