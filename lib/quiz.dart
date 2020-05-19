@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:quizapp/Services.dart';
 import 'dart:async';
 import 'json2.dart';
+import 'dart:convert';
 import 'Services.dart';
 
 
@@ -13,21 +14,26 @@ class getjson extends StatefulWidget {
   _getjsonState createState() => _getjsonState();
 }
 class _getjsonState extends State<getjson> {
-  Future<QuizQuestion> futureAlbum;
+  Future<List<QuizQuestion>> futureAlbum;
 
   @override
   void initState() {
     super.initState();
-    futureAlbum = getdata();
+    try {
+      futureAlbum = getdata();
+    }
+    catch(e){
+      //error
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
+    return FutureBuilder<List<QuizQuestion>>(
         future: futureAlbum,
         builder: (context, snapshot) {
           List mydata = snapshot.data;
-          print(mydata);
+          print(mydata);//json.decode(snapshot.data.toString());
           if (mydata == null) {
             return Scaffold(
               body: Center(
@@ -114,7 +120,7 @@ class _quizpageState extends State<quizpage> {
                   padding: EdgeInsets.all(15.0),
                   alignment: Alignment.bottomLeft,
                   child: Text(
-                    "Sample Questions",
+                    mydata[0].questions,
                     style: TextStyle(
                       fontSize: 16.0,
                       fontFamily: "",

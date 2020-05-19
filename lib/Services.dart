@@ -4,17 +4,18 @@ import 'dart:convert';
 import 'json2.dart';
 
 
-  Future<QuizQuestion> getdata() async{
-    try{
+  Future<List<QuizQuestion>> getdata() async{
+    List<QuizQuestion> list;
       final response = await http.get('http://www.mocky.io/v2/5ebd2f5f31000018005b117f');
       if(response.statusCode == 200){
-        return QuizQuestion.fromJson(json.decode(response.body));
+        var decoded = json.decode(response.body);
+        var rest = decoded["Quiz Questions"] as List;
+        list = rest.map<QuizQuestion>((json) => QuizQuestion.fromJson(json)).toList();
+        //return QuizQuestion.fromJson(decoded["Quiz Questions"]);
       }
       else{
         throw Exception('Failed to load');
       }
+      return list;
     }
-    catch(e){
-      throw Exception('Failed to load');
-    }
-  }
+
