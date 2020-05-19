@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
+import 'quiz.dart';
 class homepage extends StatefulWidget {
   @override
   _homepageState createState() => _homepageState();
@@ -7,6 +8,9 @@ class homepage extends StatefulWidget {
 class _homepageState extends State<homepage>{
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,DeviceOrientation.portraitUp
+    ]);
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -46,6 +50,9 @@ class _homepageState extends State<homepage>{
             ),
             RaisedButton(
               onPressed: (){
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => getjson(),
+                ));
               },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
