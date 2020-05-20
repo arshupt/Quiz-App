@@ -14,7 +14,7 @@ class _homepageState extends State<homepage>{
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "QuizApp"
+            "Quizora"
           ),
         ),
       backgroundColor: Colors.white,
@@ -40,7 +40,7 @@ class _homepageState extends State<homepage>{
               ),
             ),
             Text('''
-            \n1. For each question, 10 seconds will be allotted for answering\n\n2. Every question have four options\n\n3.Choose one option and press next button to move on to the next question\n\n4.At the end of the quiz, total score will be displayed\n\n\t\t       Click on "Start Quiz" to begin
+            \n1. For each question, 10 seconds will be allotted for answering\n\n2. Every question have four options\n\n3.Choose one option by tapping on it then and you will be directed to the next question\n\n4.At the end of the quiz, total score will be displayed\n\n\t\t       Click on "Start Quiz" to begin
             ''',
             style: TextStyle(
               fontSize: 18.0,

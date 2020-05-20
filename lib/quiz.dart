@@ -7,6 +7,7 @@ import 'dart:async';
 import 'json2.dart';
 import 'dart:convert';
 import 'Services.dart';
+import 'result.dart';
 
 
 class getjson extends StatefulWidget {
@@ -33,7 +34,8 @@ class _getjsonState extends State<getjson> {
     return FutureBuilder<List<QuizQuestion>>(
         future: futureAlbum,
         builder: (context, snapshot) {
-          List mydata = snapshot.data; //json.decode(snapshot.data.toString());
+          List mydata = snapshot.data;
+          //json.decode(snapshot.data.toString());
           if (mydata == null) {
             return Scaffold(
               body: Center(
@@ -44,6 +46,7 @@ class _getjsonState extends State<getjson> {
             );}
           else{
             return quizpage(mydata : mydata);
+
           }
         },
     );
@@ -58,6 +61,7 @@ class _quizpageState extends State<quizpage> {
   var mydata;
   _quizpageState(this.mydata);
 
+
   Color colortoshow = Colors.indigoAccent;
   Color right = Colors.green;
   Color wrong = Colors.red;
@@ -67,10 +71,10 @@ class _quizpageState extends State<quizpage> {
   String showtimer = "10";
 
   Map<int,Color> btncolor = {
-    0 : Colors.indigoAccent,
-    1 : Colors.indigoAccent,
-    2 : Colors.indigoAccent,
-    3 : Colors.indigoAccent,
+    0 : Color(0xFF0075FF),
+    1 : Color(0xFF0075FF),
+    2 : Color(0xFF0075FF),
+    3 : Color(0xFF0075FF),
   };
 
   bool canceltimer = false;
@@ -105,16 +109,18 @@ class _quizpageState extends State<quizpage> {
     canceltimer = false;
     timer=10;
     setState(() {
-      if(i<mydata.length){
+      if(i<mydata.length-1){
         i++;
       }
       else{
-
+      Navigator.of (context).pushReplacement(MaterialPageRoute(
+          builder: (context) => result(marks:marks),
+      ));
       }
-      btncolor[0] = Colors.indigoAccent;
-      btncolor[1] = Colors.indigoAccent;
-      btncolor[2] = Colors.indigoAccent;
-      btncolor[3] = Colors.indigoAccent;
+      btncolor[0] = Color(0xFF0075FF);
+      btncolor[1] = Color(0xFF0075FF);
+      btncolor[2] = Color(0xFF0075FF);
+      btncolor[3] = Color(0xFF0075FF);
     });
     starttimer();
   }
@@ -138,7 +144,7 @@ class _quizpageState extends State<quizpage> {
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 10.0,
-        horizontal: 20.0,
+        horizontal: 10.0,
       ),
       child: MaterialButton(
         onPressed: () => checkanswer(k),
@@ -146,10 +152,11 @@ class _quizpageState extends State<quizpage> {
           mydata[i].answers[k].answers,
           style: TextStyle(
             color: Colors.white,
-            fontFamily: "",
+            fontFamily: "Montserrat",
             fontSize: 16.0,
+            fontWeight: FontWeight.bold,
           ),
-          maxLines: 1,
+          //maxLines: 1,
         ),
         color: btncolor[k],
         splashColor: Colors.indigo[700],
@@ -193,17 +200,20 @@ class _quizpageState extends State<quizpage> {
               Expanded(
                 flex: 3,
                 child: Container(
-                  color: Colors.white,
+                  //color: Color(0xFF062B4E),
                   padding: EdgeInsets.all(15.0),
-                  alignment: Alignment.bottomLeft,
+                  alignment: Alignment.centerLeft,
                   child: Text(
                     mydata[i].questions,
                     style: TextStyle(
-                      fontSize: 16.0,
-                      fontFamily: "",
+                      color: Colors.white,
+                      fontSize: 26.0,
+                      fontFamily: "Montserrat",
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
+
               ),
               Expanded(
                 flex: 6,
@@ -217,6 +227,7 @@ class _quizpageState extends State<quizpage> {
                       choicebutton(3),
                     ],
                   ),
+                  //color: Colors.indigo,
                 ),
               ),
               Expanded(
@@ -227,16 +238,28 @@ class _quizpageState extends State<quizpage> {
                     child: Text(
                       showtimer,
                       style: TextStyle(
+                          color: Colors.white,
                           fontSize: 35.0,
                           fontWeight: FontWeight.w700,
-                          fontFamily: ""
+                          fontFamily: "Montserrat"
                       ),
+                    ),
+                  ),
+
+                  decoration: BoxDecoration(
+                    color: Colors.indigoAccent,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30.0),
+                      topRight: Radius.circular(30.0),
                     ),
                   ),
                 ),
               )
             ],
-          )
+
+          ),
+              backgroundColor: Color(0xFF0A3D75),
       ),
     );
   }
