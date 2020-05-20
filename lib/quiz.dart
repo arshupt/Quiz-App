@@ -126,7 +126,7 @@ class _quizpageState extends State<quizpage> {
   }
 
   void checkanswer(int k){
-      if(mydata[0].answers[k].isTrue == true){
+      if(mydata[i].answers[k].isTrue == true){
         marks=marks+1;
         colortoshow = right;
       }

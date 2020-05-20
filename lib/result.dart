@@ -24,19 +24,20 @@ class _resultState extends State<result> {
 
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-              "You Scored",
-
+        Padding(
+          padding: EdgeInsets.only(
+            top: 25.0,
+            ),
+          child: Text(
+            "You Scored",
             style: TextStyle(
               fontSize: 45.0,
               fontWeight: FontWeight.bold,
               color: Colors.black87,
               fontFamily: "Montserrat",
-
             ),
-
           ),
-
+        ),
          Container(
            margin: EdgeInsets.all(100.0),
            padding: EdgeInsets.all(15.0),

@@ -35,7 +35,6 @@ class _homepageState extends State<homepage>{
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: "Montserrat",
-
                 color: Colors.black
               ),
             ),
