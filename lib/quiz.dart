@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:quizapp/Services.dart';
 import 'dart:async';
 import 'json2.dart';
-import 'dart:convert';
 import 'Services.dart';
 import 'result.dart';
 
@@ -40,7 +39,7 @@ class _getjsonState extends State<getjson> {
             return Scaffold(
               body: Center(
                 child: Text(
-                  "Loading",
+                  "Loading...",
                 ),
               ),
             );}
@@ -179,7 +178,7 @@ class _quizpageState extends State<quizpage> {
             context: context,
             builder: (context) => AlertDialog(
               title: Text(
-                "Quizapp",
+                "Quizora",
               ),
               content: Text("You Can't Go Back At This Stage."),
               actions: <Widget>[

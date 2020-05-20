@@ -26,29 +26,35 @@ class _resultState extends State<result> {
         children: <Widget>[
         Padding(
           padding: EdgeInsets.only(
-            top: 25.0,
+            top: 100.0,
             ),
           child: Text(
-            "You Scored",
+            "Your Score",
             style: TextStyle(
               fontSize: 45.0,
               fontWeight: FontWeight.bold,
-              color: Colors.black87,
+              color: Color(0xFF484849),
               fontFamily: "Montserrat",
             ),
           ),
         ),
          Container(
-           margin: EdgeInsets.all(100.0),
+           margin: EdgeInsets.all(25.0),
            padding: EdgeInsets.all(15.0),
            alignment: Alignment.center,
            decoration: BoxDecoration(
-             color: Colors.orange,
+             gradient:
+             LinearGradient(
+               begin: Alignment.topCenter,
+               end: Alignment.bottomCenter,
+               colors: [const Color(0xFFFDF305), const Color(0xFFFD5E05)],
+               //tileMode: TileMode.repeated,
+             ),
+             //color: Color(0xFF4374AD),
              shape: BoxShape.circle,
            ),
            child: Text(
              "$marks",
-
              style: TextStyle(
                fontSize: 50.0,
                fontWeight: FontWeight.bold,
@@ -59,15 +65,15 @@ class _resultState extends State<result> {
            ),
 
          ),
-         Text(
+         /*Text(
            "Points",
            style: TextStyle(
              fontSize: 45.0,
              fontWeight: FontWeight.bold,
-             color: Colors.black87,
+             color: Color(0xFF484849),
              fontFamily: "Montserrat",
            ),
-         ),
+         ),*/
 
 
 
@@ -84,7 +90,7 @@ class _resultState extends State<result> {
                   },
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
-                  color: Colors.blue,
+                  color: Color(0xFF0D47A1),
                   child: Text(
                     "Replay",
                     style: TextStyle(

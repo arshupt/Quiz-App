@@ -41,10 +41,12 @@ class _homepageState extends State<homepage>{
             Text('''
             \n1. For each question, 10 seconds will be allotted for answering\n\n2. Every question have four options\n\n3.Choose one option by tapping on it then and you will be directed to the next question\n\n4.At the end of the quiz, total score will be displayed\n\n\t\t       Click on "Start Quiz" to begin
             ''',
+            textAlign: TextAlign.left,
             style: TextStyle(
               fontSize: 18.0,
               fontFamily: "Montserrat",
               color: Colors.black,
+              fontWeight: FontWeight.normal,
             ),
             ),
             RaisedButton(
