@@ -66,6 +66,7 @@ class _quizpageState extends State<quizpage> {
   Color wrong = Colors.red;
   int marks = 0;
   int i = 0;
+  int j=1;
   int timer = 10;
   String showtimer = "10";
 
@@ -110,6 +111,7 @@ class _quizpageState extends State<quizpage> {
     setState(() {
       if(i<mydata.length-1){
         i++;
+        j=i+1;
       }
       else{
       Navigator.of (context).pushReplacement(MaterialPageRoute(
@@ -203,17 +205,16 @@ class _quizpageState extends State<quizpage> {
                   padding: EdgeInsets.all(15.0),
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    mydata[i].questions,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 26.0,
-                      fontFamily: "Montserrat",
-                      fontWeight: FontWeight.bold,
+                          mydata[i].questions,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 26.0,
+                            fontFamily: "Montserrat",
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                 ),
-
-              ),
               Expanded(
                 flex: 6,
                 child: Container(

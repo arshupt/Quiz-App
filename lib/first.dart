@@ -39,7 +39,7 @@ class _homepageState extends State<homepage>{
               ),
             ),
             Text('''
-            \n1. For each question, 10 seconds will be allotted for answering\n\n2. Every question have four options\n\n3.Choose one option by tapping on it then and you will be directed to the next question\n\n4.At the end of the quiz, total score will be displayed\n\n\t\t       Click on "Start Quiz" to begin
+            \n1. For each question, 10 seconds will be allotted for answering\n\n2. Each question has four options\n\n3.Choose the answer by pressing on the appropriate option. Once pressed, You cannot change your answer\n\n4.At the end of the quiz, total score will be displayed\n\n\t\t       Click on "Start Quiz" to begin
             ''',
             textAlign: TextAlign.left,
             style: TextStyle(

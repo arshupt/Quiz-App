@@ -59,11 +59,8 @@ class _resultState extends State<result> {
                fontSize: 50.0,
                fontWeight: FontWeight.bold,
                color: Colors.white,
-
              ),
-
            ),
-
          ),
          /*Text(
            "Points",
