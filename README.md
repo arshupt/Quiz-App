@@ -2,6 +2,10 @@
 
 ## A Quiz Application in Flutter
 Fetches Data from JSON file
+### About the Appilcation
+- The quiz starts while pressing the "Start Quiz" button, after reading the instructions
+- The Quiz page consist of the question, answer options and a timer of 10 seconds
+- At the end of the quiz, the score will be displayed (1 point for each correct answer)
 
 ## Screenshots
 ![photo_2020-05-21_13-11-38](https://user-images.githubusercontent.com/47708978/82536165-af1ae900-9b65-11ea-9871-735f5b3a03e3.jpg)
